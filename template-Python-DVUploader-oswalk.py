@@ -1,3 +1,5 @@
+# This script uses os.walk to traverse a directory and upload all files found to a Dataverse dataset using dvuploader. 
+# The upload will begin right after the list is printed - to seperate these functions you can use the config creator and config uploader scripts.
 import dvuploader as dv
 import os
 
@@ -17,10 +19,12 @@ for root, dirs, files in os.walk(start_directory):
     for name in files:
         file_paths = os.path.join(root, name) # os.walk gives a tuple of (root, dirs, files), so we need to join root and name to get the full file path
         file_list.append(dv.File(filepath=file_paths)) # Append dv.File to each file path on the list which is required by dvuploader
-        
+
+# Defines the Dataverse instance via URL and dataset using DOI to upload to, along with API token for authentication
+# Supply your API topken and persistent ID here - the provided dataverse URL is for the Texas Data Repository        
 DV_URL = "https://dataverse.tdl.org/"
-API_TOKEN = "d80c6e63-58f0-4678-ac63-8fa02a5fcd7a"
-PID = "https://doi.org/10.18738/T8/MHBBXA"
+API_TOKEN = "XXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"
+PID = "doi:10.70122/XXX/XXXXX"
 
 dvuploader = dv.DVUploader(files=file_list)
 dvuploader.upload(

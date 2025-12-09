@@ -3,7 +3,8 @@ import os
 import json
 
 #this is the directory you want to upload
-start_directory = r"C:\Users\LEveritt\Documents\Upload-test"
+# Provide the complete path between the quotes
+start_directory = r"\Upload-test"
 
 #this will hold the file paths from all the files in the directory you want to upload
 file_paths = []
@@ -15,10 +16,11 @@ for root, name, files in os.walk(start_directory):
         file_paths.append({"filepath": full_path}) 
 
 # Creates the config.json file dictonary and defines the dataverse URL, API token, persistent ID, and files to upload
+# Supply your API topken and persistent ID here - the provided dataverse URL is for the Texas Data Repository
 config_data = {
-    "persistent_id": "https://doi.org/10.18738/T8/KRSISP",
+    "persistent_id": "doi:10.70122/XXX/XXXXX",
     "dataverse_url": "https://dataverse.tdl.org/",
-    "api_token": "d80c6e63-58f0-4678-ac63-8fa02a5fcd7a",
+    "api_token": "XXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
     "files": file_paths}
 
 #creates the config.json file with all the data defined above

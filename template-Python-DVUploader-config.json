@@ -1,0 +1,15 @@
+{
+    "persistent_id": "doi:10.70122/XXX/XXXXX",
+    "dataverse_url": "https://dataverse.tdl.org/",
+    "api_token": "XXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
+    "files": [
+        {
+            "filepath": "\\Example.csv",
+            "description": "Optional description of the file",
+            "mimetype": "file type examples: csv, txt, xlsx, pdf",
+            "categories": ["Data"],
+            "restrict": false,
+            "tabIngest": true
+        }
+    ]
+}

@@ -1,6 +1,12 @@
 # Custom
 
 config.json
+config2.json
+config-file-creator-Python-DVUploader.py
+DirectoryUpload-Python-DVUploader.py
+FileUpload-Python-DVUploader.py
+Python-DVuploader-oswalk.py
+upload-via-config-Python-DVUploader.py
 
 
 # Byte-compiled / optimized / DLL files
