@@ -43,6 +43,8 @@ python -m pip install dvuploader
 ```
 > ⚠️ The scripts that upload to Dataverse require a valid Dataverse instance URL (https://dataverse.tdl.org/), an API token with upload permissions, and an existing dataset DOI (Digital Object Identifier).
 
+For additional information on Python DVUploader visit https://github.com/gdcc/python-dvuploader or https://pypi.org/project/dvuploader/0.1.0/.
+
 ### API token
 
 All TDR users can obtain an API token through the web interface. Details can be found [here](https://guides.dataverse.org/en/latest/user/account.html#api-token). Tokens are good for 1 year and should not be shared. For non-TDR users reference https://guides.dataverse.org/en/latest/api/auth.html and any institutional documentation to create your API token.
