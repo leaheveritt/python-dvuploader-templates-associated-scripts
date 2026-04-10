@@ -97,6 +97,35 @@ categories: Optional list of categories to assign to the file.
 restrict: Boolean to indicate that this is a restricted file. Defaults to False.
 tabIngest: Boolean to indicate that the file should be ingested as a tab-separated file. Defaults to True.
 
+To use the config file to upload to the repository use the following:
+```powershell
+
+import json
+import dvuploader as dv
+
+# Load config from JSON file
+with open("config.json", "r") as f:
+    config = json.load(f)
+
+# Create DVUploader File objects from config
+files = []
+for file_info in config["files"]:
+    files.append(dv.File(**file_info))
+
+
+
+# Create uploader instance
+dvuploader = dv.DVUploader(files=files)
+
+# Upload using config values
+dvuploader.upload(
+    api_token=config["api_token"],
+    dataverse_url=config["dataverse_url"],
+    persistent_id=config["persistent_id"],
+    n_parallel_uploads=2  
+)
+```
+
 ### 4) Upload a directory of files
 
 Edit `template-DirectoryUpload-Python-DVUploader.py` and set:
